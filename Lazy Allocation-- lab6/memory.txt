@@ -1,0 +1,11 @@
+1. The Struct run is like a link list. kmem.freelist stores pointer to pages in physical memory which are free and can be allocated to process. 
+r = (struct run*)v : get the page pointed by v, then 
+The code puts 'r'(page pointed by v) at the top of the freelist ( sort of putting a node at head of linklist ) 
+
+2. PDX(va) returns the first 10 bits of the virtual address, that is the index in pgdir for the address of Page table entry, ( variable: pde )
+
+PTE_ADDR(*pde) gives the first 20 bits which contain the start address of the PTE. ( last 12 bits contain the flags )
+pgtab stores this.	
+	
+PTX(va) gives the index of entry in PTE table ( pgtab ). We are returning the address of this entry in PTE table.
+	  
